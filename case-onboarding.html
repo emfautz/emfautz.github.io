@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Case Study – Digital Onboarding Workflow</title>
+
+  <style>
+    :root {
+      --primary: #2F1645;
+      --primary-dark: #1A0D27;
+      --accent: #A678E2;
+      --text: #e7ddf7;
+      --text-muted: #b7a8d4;
+      --bg: #12071f;
+      --panel: #1b0f2b;
+      --max-width: 900px;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, sans-serif;
+      background: var(--primary-dark);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 2rem 1.5rem 4rem;
+    }
+
+    /* Hero */
+    .hero {
+      padding: 6rem 1.5rem 4rem;
+      background: radial-gradient(circle at top left, #3b215a 0, #12071f 55%, #07030d 100%);
+      text-align: center;
+    }
+
+    .hero-title {
+      font-size: 2.4rem;
+      font-weight: 700;
+      margin-bottom: 0.8rem;
+    }
+
+    .hero-subtitle {
+      max-width: 600px;
+      margin: 0.5rem auto 1.5rem;
+      color: var(--text-muted);
+      font-size: 1rem;
+    }
+
+    .hero-meta {
+      display: flex;
+      justify-content: center;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+    }
+
+    .badge {
+      padding: 0.35rem 0.9rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--text-muted);
+    }
+
+    /* Section headings */
+    h2 {
+      font-size: 1.6rem;
+      margin-top: 3rem;
+      margin-bottom: 0.6rem;
+      font-weight: 700;
+    }
+
+    p {
+      margin-bottom: 1rem;
+      color: var(--text);
+    }
+
+    ul {
+      margin: 0.5rem 0 1.5rem 1.2rem;
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: 0.6rem;
+      color: var(--text-muted);
+    }
+
+    /* Side panel */
+    .side-panel {
+      background: var(--panel);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 1.4rem 1.2rem;
+      border-radius: 16px;
+      margin-top: 2rem;
+    }
+
+    .side-panel h3 {
+      margin-top: 0;
+      margin-bottom: 0.6rem;
+      font-size: 1rem;
+      color: #fff;
+    }
+
+    .side-panel p {
+      margin-bottom: 0.6rem;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 3rem;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--accent);
+    }
+
+    .back-link::before {
+      content: "← ";
+      color: var(--accent);
+    }
+
+    @media (min-width: 900px) {
+      .case-layout {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 3rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h1 class="hero-title">Digital Onboarding Workflow</h1>
+    <p class="hero-subtitle">
+      A full‑stack onboarding system built with C#, .NET, and SQL to replace paper‑based processes, improve accuracy, and
+      reduce cycle time from days to hours.
+    </p>
+
+    <div class="hero-meta">
+      <span class="badge">Web App</span>
+      <span class="badge">C#</span>
+      <span class="badge">.NET</span>
+      <span class="badge">SQL</span>
+      <span class="badge">Automation</span>
+    </div>
+  </section>
+
+  <!-- Content -->
+  <div class="container case-layout">
+
+    <div>
+      <h2>Overview</h2>
+      <p>
+        The Digital Onboarding Workflow replaced a slow, paper‑based onboarding process used by internal teams. The new
+        system standardized data collection, automated approvals, and provided real‑time visibility into onboarding
+        progress. Built with C#, .NET, and SQL, it became a reliable, auditable workflow used across departments.
+      </p>
+
+      <h2>The Problem</h2>
+      <p>
+        Before this solution, onboarding required physical forms, manual data entry, and back‑and‑forth communication
+        between HR, IT, and operations. This created delays, inconsistencies, and limited visibility into where a new hire
+        was in the process.
+      </p>
+
+      <ul>
+        <li>Paper forms caused delays and lost information</li>
+        <li>No centralized system for tracking onboarding progress</li>
+        <li>Manual data entry introduced errors and rework</li>
+        <li>Departments lacked visibility into dependencies</li>
+        <li>Onboarding cycle time often stretched to multiple days</li>
+      </ul>
+
+      <h2>Your Approach</h2>
+      <p>
+        I designed and implemented a full‑stack onboarding workflow using C#, .NET, and SQL Server. The system included a
+        structured onboarding form, automated routing logic, and a centralized dashboard for tracking progress.
+      </p>
+
+      <ul>
+        <li>Built a C#/.NET backend with clear domain models and validation rules</li>
+        <li>Designed SQL tables and stored procedures for reliable data storage</li>
+        <li>Created a multi‑step onboarding workflow with automated status updates</li>
+        <li>Implemented role‑based access for HR, IT, and operations</li>
+        <li>Added reporting tools for cycle‑time and completion metrics</li>
+      </ul>
+
+      <h2>The Outcome</h2>
+      <ul>
+        <li>Reduced onboarding cycle time from days to **hours**</li>
+        <li>Eliminated manual data entry and associated errors</li>
+        <li>Improved cross‑department visibility with a centralized dashboard</li>
+        <li>Standardized onboarding data for compliance and reporting</li>
+        <li>Enabled faster, more consistent new‑hire setup</li>
+      </ul>
+
+      <h2>What I Learned</h2>
+      <p>
+        This project strengthened my experience designing full‑stack workflows and reinforced the value of clear data
+        modeling, predictable state transitions, and building tools that support multiple departments with different needs.
+      </p>
+
+      <a href="index.html" class="back-link">Back to portfolio</a>
+    </div>
+
+    <!-- Side Panel -->
+    <aside class="side-panel">
+      <h3>Project Details</h3>
+      <p><strong>Role:</strong> Senior Software Engineer</p>
+      <p><strong>Timeline:</strong> 10 weeks</p>
+      <p><strong>Industry:</strong> Marketing & Operations</p>
+
+      <h3>Tech Stack</h3>
+      <p>C# / .NET</p>
+      <p>SQL Server</p>
+      <p>REST APIs</p>
+      <p>Azure DevOps</p>
+
+      <h3>Key Themes</h3>
+      <p>Process automation</p>
+      <p>Data integrity</p>
+      <p>Cross‑department workflows</p>
+      <p>Operational efficiency</p>
+    </aside>
+
+  </div>
+
+</body>
+</html>

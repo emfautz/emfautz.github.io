@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Case Study – Infection Tracker</title>
+
+  <style>
+    :root {
+      --primary: #2F1645;
+      --primary-dark: #1A0D27;
+      --accent: #A678E2;
+      --text: #e7ddf7;
+      --text-muted: #b7a8d4;
+      --bg: #12071f;
+      --panel: #1b0f2b;
+      --max-width: 900px;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, sans-serif;
+      background: var(--primary-dark);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 2rem 1.5rem 4rem;
+    }
+
+    .hero {
+      padding: 6rem 1.5rem 4rem;
+      background: radial-gradient(circle at top left, #3b215a 0, #12071f 55%, #07030d 100%);
+      text-align: center;
+    }
+
+    .hero-title {
+      font-size: 2.4rem;
+      font-weight: 700;
+      margin-bottom: 0.8rem;
+    }
+
+    .hero-subtitle {
+      max-width: 600px;
+      margin: 0.5rem auto 1.5rem;
+      color: var(--text-muted);
+      font-size: 1rem;
+    }
+
+    .hero-meta {
+      display: flex;
+      justify-content: center;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+    }
+
+    .badge {
+      padding: 0.35rem 0.9rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--text-muted);
+    }
+
+    h2 {
+      font-size: 1.6rem;
+      margin-top: 3rem;
+      margin-bottom: 0.6rem;
+      font-weight: 700;
+    }
+
+    p {
+      margin-bottom: 1rem;
+      color: var(--text);
+    }
+
+    ul {
+      margin: 0.5rem 0 1.5rem 1.2rem;
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: 0.6rem;
+      color: var(--text-muted);
+    }
+
+    .side-panel {
+      background: var(--panel);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 1.4rem 1.2rem;
+      border-radius: 16px;
+      margin-top: 2rem;
+    }
+
+    .side-panel h3 {
+      margin-top: 0;
+      margin-bottom: 0.6rem;
+      font-size: 1rem;
+      color: #fff;
+    }
+
+    .side-panel p {
+      margin-bottom: 0.6rem;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 3rem;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--accent);
+    }
+
+    .back-link::before {
+      content: "← ";
+      color: var(--accent);
+    }
+
+    @media (min-width: 900px) {
+      .case-layout {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 3rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <section class="hero">
+    <h1 class="hero-title">Infection Tracker</h1>
+    <p class="hero-subtitle">
+      A .NET + Angular + SQL application built in early 2020 to track infections, supplies, and staffing impact across
+      senior living communities — with cascading forms and real‑time KPIs.
+    </p>
+
+    <div class="hero-meta">
+      <span class="badge">Healthcare</span>
+      <span class="badge">C#</span>
+      <span class="badge">.NET</span>
+      <span class="badge">Angular</span>
+      <span class="badge">SQL</span>
+    </div>
+  </section>
+
+  <div class="container case-layout">
+
+    <div>
+      <h2>Overview</h2>
+      <p>
+        The Infection Tracker was developed at the onset of the COVID‑19 pandemic to help senior living communities
+        monitor infection spread, supply shortages, and staffing impact. The system evolved rapidly as needs changed,
+        eventually supporting KPIs, cascading forms, and multi‑facility reporting.
+      </p>
+
+      <h2>The Problem</h2>
+      <p>
+        Senior living communities lacked a centralized system to track infections, exposures, and resource needs. Early
+        spreadsheets quickly became unmanageable, and leadership needed real‑time visibility to make operational decisions.
+      </p>
+
+      <ul>
+        <li>No unified system for tracking resident and employee infections</li>
+        <li>Manual spreadsheets created inconsistencies and delays</li>
+        <li>Facilities needed to report supply shortages daily</li>
+        <li>Leadership required real‑time KPIs across all communities</li>
+        <li>Forms needed to adapt as new symptoms and protocols emerged</li>
+      </ul>
+
+      <h2>Your Approach</h2>
+      <p>
+        I built a full‑stack CRUD application using .NET, Angular, and SQL Server. The system included cascading forms,
+        dynamic fields, and dashboards that updated as new requirements emerged.
+      </p>
+
+      <ul>
+        <li>Developed Angular UI with cascading forms and conditional fields</li>
+        <li>Built .NET API endpoints for infection, supply, and staffing data</li>
+        <li>Designed SQL schema for multi‑facility reporting</li>
+        <li>Implemented KPIs such as infection counts and employee impact</li>
+        <li>Added exportable reports for leadership and compliance teams</li>
+      </ul>
+
+      <h2>The Outcome</h2>
+      <ul>
+        <li>Provided real‑time visibility into infection spread across all communities</li>
+        <li>Enabled faster decision‑making for staffing and supply allocation</li>
+        <li>Reduced manual reporting time by **over 70%**</li>
+        <li>Supported evolving clinical protocols with flexible form logic</li>
+        <li>Became a daily operational tool during the height of the pandemic</li>
+      </ul>
+
+      <h2>What I Learned</h2>
+      <p>
+        This project taught me how to build rapidly evolving systems under pressure, design flexible data models, and
+        create UI flows that adapt to changing clinical requirements.
+      </p>
+
+      <a href="index.html" class="back-link">Back to portfolio</a>
+    </div>
+
+    <aside class="side-panel">
+      <h3>Project Details</h3>
+      <p><strong>Role:</strong> Developer II</p>
+      <p><strong>Timeline:</strong> Rapid development (2020)</p>
+      <p><strong>Industry:</strong> Senior Living & Healthcare</p>
+
+      <h3>Tech Stack</h3>
+      <p>.NET</p>
+      <p>Angular</p>
+      <p>SQL Server</p>
+      <p>REST APIs</p>
+
+      <h3>Key Themes</h3>
+      <p>Rapid iteration</p>
+      <p>Clinical workflows</p>
+      <p>Data visualization</p>
+      <p>Operational response</p>
+    </aside>
+
+  </div>
+
+</body>
+</html>

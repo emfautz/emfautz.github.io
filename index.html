@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Emily Fautz – Software Engineer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --primary: #2F1645;
+      --primary-dark: #1A0D27;
+      --accent: #A678E2;
+      --light: #f7f2fb;
+      --text: #e7ddf7;
+      --text-muted: #b7a8d4;
+      --max-width: 1100px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--primary-dark);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: 100%;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.8rem 1.8rem;
+      border-radius: 999px;
+      border: 1px solid var(--accent);
+      font-size: 0.85rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 600;
+      transition: all 0.2s ease;
+      background: var(--accent);
+      color: var(--primary-dark);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--accent);
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+      background: #fff;
+      color: var(--primary);
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: rgba(15, 7, 30, 0.96);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 70px;
+    }
+
+    .logo {
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+    }
+
+    .logo span {
+      color: var(--accent);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+    }
+
+    .nav-links a {
+      position: relative;
+      padding-bottom: 4px;
+      color: var(--text-muted);
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background: var(--accent);
+      transition: width 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: #fff;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    main {
+      padding-top: 70px;
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      background: radial-gradient(circle at top left, #3b215a 0, #12071f 55%, #07030d 100%);
+      padding: 4rem 0;
+    }
+
+    .hero-inner {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .hero-kicker {
+      text-transform: uppercase;
+      letter-spacing: 0.25em;
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+    }
+
+    .hero-title {
+      font-size: clamp(2.6rem, 4vw, 3.4rem);
+      line-height: 1.1;
+      margin-bottom: 1rem;
+    }
+
+    .hero-title span {
+      color: var(--accent);
+    }
+
+    .hero-subtitle {
+      max-width: 460px;
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+      font-size: 0.98rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2.5rem;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--text-muted);
+    }
+
+    .hero-meta strong {
+      display: block;
+      font-size: 1.1rem;
+      color: #fff;
+      margin-bottom: 0.2rem;
+    }
+
+    .hero-panel {
+      position: relative;
+      border-radius: 24px;
+      overflow: hidden;
+      background: linear-gradient(145deg, #2F1645, #12071f);
+      padding: 1.8rem 1.6rem;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .hero-panel-title {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+    }
+
+    .hero-panel-list {
+      list-style: none;
+      font-size: 0.9rem;
+      display: grid;
+      gap: 0.6rem;
+      color: var(--text);
+    }
+
+    .hero-panel-tag {
+      display: inline-block;
+      margin-top: 1.2rem;
+      padding: 0.35rem 0.9rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--text-muted);
+    }
+
+    section {
+      padding: 5rem 0;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .section-kicker {
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      margin-bottom: 0.6rem;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .section-subtitle {
+      max-width: 520px;
+      margin: 0.5rem auto 0;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    .projects {
+      background: #12071f;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.8rem;
+    }
+
+    .project-card {
+      position: relative;
+      border-radius: 18px;
+      overflow: hidden;
+      background: #1b0f2b;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      padding: 1.4rem 1.4rem 1.6rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+
+    .project-tag {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--text-muted);
+    }
+
+    .project-title {
+      font-size: 1.05rem;
+      font-weight: 600;
+    }
+
+    .project-desc {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .project-tech {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 0.4rem;
+    }
+
+    .badge {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      color: var(--text-muted);
+    }
+
+    .project-links {
+      margin-top: 0.8rem;
+      display: flex;
+      gap: 0.8rem;
+      font-size: 0.8rem;
+    }
+
+    .project-links a {
+      color: var(--accent);
+    }
+
+    .about {
+      background: var(--primary-dark);
+    }
+
+    .about-inner {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 3rem;
+      align-items: flex-start;
+    }
+
+    .about-text p {
+      margin-bottom: 1rem;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1.4rem;
+      margin-top: 1.5rem;
+      font-size: 0.9rem;
+    }
+
+    .skills-group-title {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--text-muted);
+      margin-bottom: 0.4rem;
+    }
+
+    .skills-group-list {
+      list-style: none;
+      color: var(--text);
+    }
+
+    .resume-panel {
+      border-radius: 20px;
+      background: #1b0f2b;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 1.6rem 1.5rem;
+      font-size: 0.9rem;
+    }
+
+    .resume-panel h3 {
+      font-size: 1rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .resume-meta {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 0.8rem;
+    }
+
+    .resume-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      margin-top: 1rem;
+      font-size: 0.8rem;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+    }
+
+    .resume-link::after {
+      content: "↗";
+      font-size: 0.9rem;
+    }
+
+    .contact {
+      background: #12071f;
+    }
+
+    .contact-inner {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      gap: 3rem;
+      align-items: flex-start;
+    }
+
+    .contact-form {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+      font-size: 0.85rem;
+    }
+
+    .field label {
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--text-muted);
+    }
+
+    .field input,
+    .field textarea {
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      padding: 0.8rem 1rem;
+      font: inherit;
+      background: #1b0f2b;
+      color: var(--text);
+      outline: none;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .field textarea {
+      border-radius: 18px;
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .field input::placeholder,
+    .field textarea::placeholder {
+      color: var(--text-muted);
+    }
+
+    .field input:focus,
+    .field textarea:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 1px var(--accent);
+    }
+
+    .contact-info {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+
+    .contact-info h3 {
+      font-size: 1rem;
+      color: #fff;
+    }
+
+    .contact-item span {
+      display: block;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--text-muted);
+      margin-bottom: 0.2rem;
+    }
+
+    .newsletter {
+      padding: 3rem 0 2rem;
+      background: #07030d;
+      text-align: center;
+    }
+
+    .newsletter-inner {
+      max-width: 520px;
+      margin: 0 auto 2rem;
+    }
+
+    .newsletter-title {
+      font-size: 1.4rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .newsletter-subtitle {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .newsletter-form {
+      margin-top: 1.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      justify-content: center;
+    }
+
+    .newsletter-form input {
+      min-width: 220px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      padding: 0.8rem 1rem;
+      background: #12071f;
+      color: var(--text);
+      font: inherit;
+      outline: none;
+    }
+
+    .newsletter-form input::placeholder {
+      color: var(--text-muted);
+    }
+
+    .newsletter-form input:focus {
+      border-color: var(--accent);
+    }
+
+    footer {
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+      padding-top: 1.5rem;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      text-align: center;
+    }
+
+    @media (max-width: 900px) {
+      .hero-inner,
+      .about-inner,
+      .contact-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 5rem;
+      }
+
+      .nav-links {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="logo">EM <span>FAUTZ</span></div>
+      <nav class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#projects">Projects</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="home" class="hero">
+    <div class="container hero-inner">
+      <div>
+        <div class="hero-kicker">Software engineer · automation · full stack</div>
+        <h1 class="hero-title">
+          Building <span>reliable software</span> for healthcare, finance, and beyond.
+        </h1>
+        <p class="hero-subtitle">
+          I’m Emily Fautz, a software engineer with 10 years of experience delivering web apps, automation, and data‑driven
+          tools using C#, .NET, Angular, SQL, and the Microsoft Power Platform.
+        </p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn">View projects</a>
+          <a href="#about" class="btn btn-outline">Résumé & skills</a>
+        </div>
+        <div class="hero-meta">
+          <div>
+            <strong>10+ yrs</strong>
+            experience
+          </div>
+          <div>
+            <strong>Healthcare</strong>
+            & financial
+          </div>
+          <div>
+            <strong>End‑to‑end</strong>
+            delivery
+          </div>
+        </div>
+      </div>
+
+      <aside class="hero-panel">
+        <div class="hero-panel-title">Core stack</div>
+        <ul class="hero-panel-list">
+          <li>C#, .NET, REST APIs</li>
+          <li>Angular, TypeScript, SPA development</li>
+          <li>SQL Server, data modeling, optimization</li>
+          <li>Power Platform, Power BI, UiPath</li>
+          <li>Azure DevOps, CI/CD, automation</li>
+        </ul>
+        <div class="hero-panel-tag">Louisville, KY · Remote friendly</div>
+      </aside>
+    </div>
+  </main>
+
+  <section id="projects" class="projects">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-kicker">Selected work</div>
+        <h2 class="section-title">Projects & impact</h2>
+        <p class="section-subtitle">
+          A sample of systems and automations I’ve built across banking, healthcare, and operations—focused on reliability,
+          traceability, and measurable outcomes.
+        </p>
+      </div>
+
+      <div class="projects-grid">
+        <article class="project-card">
+          <div class="project-tag">Banking · Automation</div>
+          <h3 class="project-title">Official Check Request Automation</h3>
+          <p class="project-desc">
+            Internal banking solution integrating Power Automate, SharePoint, and Jira to replace manual check request
+            workflows and reconciliation.
+          </p>
+          <div class="project-tech">
+            <span class="badge">Power Automate</span>
+            <span class="badge">SharePoint</span>
+            <span class="badge">Jira</span>
+          </div>
+          <div class="project-links">
+            <a href="case-official-check.html">View Case Study</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-tag">Healthcare · Web app</div>
+          <h3 class="project-title">TrueNorth Organ Donation Platform</h3>
+          <p class="project-desc">
+            Contributed to core modules powering organ donation workflows for a large share of U.S. cases, with secure REST
+            integrations and reliability at scale.
+          </p>
+          <div class="project-tech">
+            <span class="badge">C#</span>
+            <span class="badge">.NET</span>
+            <span class="badge">REST APIs</span>
+          </div>
+          <div class="project-links">
+            <a href="case-truenorth.html">View Case Study</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-tag">Operations · Web app</div>
+          <h3 class="project-title">Digital Onboarding Workflow</h3>
+          <p class="project-desc">
+            Replaced paper‑based onboarding with a C#, .NET, and SQL‑backed workflow, cutting cycle time from days to hours
+            and improving traceability.
+          </p>
+          <div class="project-tech">
+            <span class="badge">C#</span>
+            <span class="badge">.NET</span>
+            <span class="badge">SQL</span>
+          </div>
+          <div class="project-links">
+            <a href="case-onboarding.html">View Case Study</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-tag">Senior living · Clinical</div>
+          <h3 class="project-title">Infection Tracker</h3>
+          <p class="project-desc">
+            Tracked infections across senior living communities during early 2020. Expanded to monitor supplies and staffing needs.
+            Included KPIs such as resident infection counts and employee impact. Built as a .NET + Angular + SQL CRUD application
+            with cascading forms.
+          </p>
+          <div class="project-tech">
+            <span class="badge">C#</span>
+            <span class="badge">.NET</span>
+            <span class="badge">SQL</span>
+          </div>
+          <div class="project-links">
+            <a href="case-infection-tracker.html">View case study</a>
+          </div>
+        </article>
+        <article class="project-card">
+          <div class="project-tag">Senior living · Clinical</div>
+          <h3 class="project-title">Elder Care App</h3>
+          <p class="project-desc">
+            Built as my graduate thesis project at UofL. A .NET + Angular + Azure SQL application demonstrating senior‑living
+            workflows, HIPAA‑aware design, and challenges around PII compliance. Included a full presentation and research paper.
+          </p>
+          <div class="project-tech">
+            <span class="badge">C#</span>
+            <span class="badge">.NET</span>
+            <span class="badge">SQL</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/emfautz/ElderCareApplication" target="_blank">GitHub</a>
+          </div>
+        </article>
+
+      <article class="project-card">
+        <div class="project-tag">Senior living · Clinical</div>
+        <h3 class="project-title">Assessment & eSignature Platform</h3>
+        <p class="project-desc">
+          .NET applications supporting clinical workflows and regulatory compliance across 230 facilities, with configurable
+          assessments, automated sub‑assessments, and secure eSignatures.
+        </p>
+        <div class="project-tech">
+          <span class="badge">.NET</span>
+          <span class="badge">SQL</span>
+          <span class="badge">Offline sync</span>
+        </div>
+        <div class="project-links">
+          <a href="case-assessment-esignature.html">View case study</a>
+        </div>
+      </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="about">
+    <div class="container about-inner">
+      <div>
+        <div class="section-kicker">About</div>
+        <h2 class="section-title">Engineer with a designer’s eye.</h2>
+        <p>
+          I’m a software engineer and automation engineer with a background in both computer science and studio art.
+          I care about systems that are not only correct and performant, but also understandable, maintainable, and
+          pleasant to use.
+        </p>
+        <p>
+          Over the last decade, I’ve built internal tools, clinical systems, banking automations, and reporting
+          dashboards—often in environments where reliability, auditability, and compliance matter as much as speed.
+        </p>
+
+        <div class="skills-grid">
+          <div>
+            <div class="skills-group-title">Languages & frameworks</div>
+            <ul class="skills-group-list">
+              <li>C#, .NET</li>
+              <li>Angular, TypeScript</li>
+              <li>SQL, T‑SQL</li>
+            </ul>
+          </div>
+          <div>
+            <div class="skills-group-title">Platforms & tools</div>
+            <ul class="skills-group-list">
+              <li>Microsoft Power Platform</li>
+              <li>Power BI, Dataverse</li>
+              <li>UiPath, SharePoint</li>
+              <li>Azure DevOps, Jira</li>
+            </ul>
+          </div>
+          <div>
+            <div class="skills-group-title">Focus areas</div>
+            <ul class="skills-group-list">
+              <li>Business process automation</li>
+              <li>Workflow & low‑code solution design</li>
+              <li>REST APIs & integrations</li>
+              <li>Data‑driven decision support</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <aside class="resume-panel">
+        <h3>Résumé snapshot</h3>
+        <div class="resume-meta">
+          Automation Engineer – Stock Yards Bank · Senior Software Engineer – Priceweber & Lifelogics · Developer II – Atria
+          Senior Living
+        </div>
+        <p>
+          I’ve delivered automations handling hundreds of transactions per month, CI/CD pipelines that cut deployment
+          effort by 70%, and healthcare systems that support critical, time‑sensitive workflows.
+        </p>
+        <p>
+          Education: MS in Computer Science (2023) and BA in Studio Art (2015), both from the University of Louisville.
+        </p>
+        <a class="resume-link" href="resume.pdf" download>Download résumé (PDF)</a>
+      </aside>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="container contact-inner">
+      <div>
+        <div class="section-kicker">Contact</div>
+        <h2 class="section-title">Let’s talk about your next system.</h2>
+        <p class="section-subtitle">
+          Whether you need automation in banking, reliability in healthcare, or a full‑stack web app, I’d love to hear
+          what you’re building.
+        </p>
+
+        <form class="contact-form" onsubmit="event.preventDefault(); alert('Demo only – wire this up to your backend or form service.');">
+          <div class="field">
+            <label for="name">Name</label>
+            <input id="name" type="text" placeholder="Your name" required />
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" type="email" placeholder="you@example.com" required />
+          </div>
+          <div class="field">
+            <label for="message">Project details</label>
+            <textarea id="message" placeholder="Share goals, timeline, and any relevant links."></textarea>
+          </div>
+          <button class="btn" type="submit">Send message</button>
+        </form>
+      </div>
+
+      <div class="contact-info">
+        <div>
+          <h3>Direct contact</h3>
+          <p>
+            For opportunities, collaborations, or questions, email is the best way to reach me. I’m open to remote and
+            hybrid roles.
+          </p>
+        </div>
+        <div class="contact-item">
+          <span>Email</span>
+          <a href="mailto:emily.k.fautz@gmail.com">emily.k.fautz@gmail.com</a>
+        </div>
+        <div class="contact-item">
+          <span>GitHub</span>
+          <a href="https://github.com/emfautz" target="_blank">github.com/emfautz</a>
+        </div>
+        <div class="contact-item">
+          <span>LinkedIn</span>
+          <a href="https://linkedin.com/in/emfautz" target="_blank">linkedin.com/in/emfautz</a>
+        </div>
+        <div class="contact-item">
+          <span>Location</span>
+          Louisville, KY · US
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="newsletter">
+    <div class="container">
+      <div class="newsletter-inner">
+        <h3 class="newsletter-title">Subscribe for occasional engineering notes.</h3>
+        <p class="newsletter-subtitle">
+          A low‑volume stream of thoughts on automation, architecture, and building software that actually fits how people work.
+        </p>
+
+        <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Newsletter demo only.');">
+          <input type="email" placeholder="Your email address" required />
+          <button class="btn" type="submit">Subscribe</button>
+        </form>
+      </div>
+
+      <footer>
+        &copy; <span id="year"></span> Emily Fautz. All rights reserved.
+      </footer>
+    </div>
+  </section>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

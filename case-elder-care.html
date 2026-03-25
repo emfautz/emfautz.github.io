@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Case Study – Elder Care App</title>
+
+  <style>
+    :root {
+      --primary: #2F1645;
+      --primary-dark: #1A0D27;
+      --accent: #A678E2;
+      --text: #e7ddf7;
+      --text-muted: #b7a8d4;
+      --bg: #12071f;
+      --panel: #1b0f2b;
+      --max-width: 900px;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, sans-serif;
+      background: var(--primary-dark);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 2rem 1.5rem 4rem;
+    }
+
+    /* Hero */
+    .hero {
+      padding: 6rem 1.5rem 4rem;
+      background: radial-gradient(circle at top left, #3b215a 0, #12071f 55%, #07030d 100%);
+      text-align: center;
+    }
+
+    .hero-title {
+      font-size: 2.4rem;
+      font-weight: 700;
+      margin-bottom: 0.8rem;
+    }
+
+    .hero-subtitle {
+      max-width: 600px;
+      margin: 0.5rem auto 1.5rem;
+      color: var(--text-muted);
+      font-size: 1rem;
+    }
+
+    .hero-meta {
+      display: flex;
+      justify-content: center;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+    }
+
+    .badge {
+      padding: 0.35rem 0.9rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--text-muted);
+    }
+
+    /* Section headings */
+    h2 {
+      font-size: 1.6rem;
+      margin-top: 3rem;
+      margin-bottom: 0.6rem;
+      font-weight: 700;
+    }
+
+    p {
+      margin-bottom: 1rem;
+      color: var(--text);
+    }
+
+    ul {
+      margin: 0.5rem 0 1.5rem 1.2rem;
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: 0.6rem;
+      color: var(--text-muted);
+    }
+
+    /* Side panel */
+    .side-panel {
+      background: var(--panel);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 1.4rem 1.2rem;
+      border-radius: 16px;
+      margin-top: 2rem;
+    }
+
+    .side-panel h3 {
+      margin-top: 0;
+      margin-bottom: 0.6rem;
+      font-size: 1rem;
+      color: #fff;
+    }
+
+    .side-panel p {
+      margin-bottom: 0.6rem;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 3rem;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--accent);
+    }
+
+    .back-link::before {
+      content: "← ";
+      color: var(--accent);
+    }
+
+    @media (min-width: 900px) {
+      .case-layout {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 3rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h1 class="hero-title">Elder Care App</h1>
+    <p class="hero-subtitle">
+      A .NET + Angular + Azure SQL application built as a graduate thesis project, demonstrating senior‑living workflows,
+      HIPAA‑aware design, and the need for modern technology in long‑term care environments.
+    </p>
+
+    <div class="hero-meta">
+      <span class="badge">Healthcare</span>
+      <span class="badge">C#</span>
+      <span class="badge">.NET</span>
+      <span class="badge">Angular</span>
+      <span class="badge">Azure SQL</span>
+    </div>
+  </section>
+
+  <!-- Content -->
+  <div class="container case-layout">
+
+    <div>
+      <h2>Overview</h2>
+      <p>
+        The Elder Care App was created as my graduate thesis project at the University of Louisville. The goal was to
+        demonstrate how modern software could improve workflows in senior living communities, where outdated systems and
+        manual processes often slow down care delivery. The project included a working application, a research paper, and
+        a formal presentation.
+      </p>
+
+      <h2>The Problem</h2>
+      <p>
+        Many senior living communities rely on fragmented tools, paper forms, and legacy systems that make it difficult to
+        track resident needs, coordinate care, and maintain compliance. These gaps create inefficiencies and increase the
+        risk of errors in environments where accuracy is critical.
+      </p>
+
+      <ul>
+        <li>Paper‑based workflows slowed down communication</li>
+        <li>No centralized system for resident information or care tasks</li>
+        <li>Legacy systems lacked modern UI and accessibility features</li>
+        <li>HIPAA and PII compliance required careful data handling</li>
+        <li>Staff needed a simple, intuitive interface</li>
+      </ul>
+
+      <h2>Your Approach</h2>
+      <p>
+        I built a full‑stack web application using .NET, Angular, and Azure SQL. The system included resident profiles,
+        care tasks, medication tracking, and secure authentication. The project emphasized usability, data integrity, and
+        compliance‑friendly design.
+      </p>
+
+      <ul>
+        <li>Developed Angular UI with clean, accessible components</li>
+        <li>Built .NET API with role‑based access and validation</li>
+        <li>Designed Azure SQL schema for resident and care data</li>
+        <li>Implemented secure authentication and PII‑aware data flows</li>
+        <li>Created demo workflows for daily care tasks and medication logs</li>
+        <li>Presented findings on technology gaps in senior living</li>
+      </ul>
+
+      <h2>The Outcome</h2>
+      <ul>
+        <li>Delivered a fully functional prototype demonstrating modern senior‑care workflows</li>
+        <li>Showcased how digital tools can reduce errors and improve coordination</li>
+        <li>Highlighted compliance considerations for healthcare software</li>
+        <li>Received strong feedback from faculty and industry professionals</li>
+        <li>Provided a foundation for future healthcare‑focused development work</li>
+      </ul>
+
+      <h2>What I Learned</h2>
+      <p>
+        This project strengthened my understanding of healthcare compliance, full‑stack architecture, and designing
+        user‑friendly tools for non‑technical staff. It also reinforced the importance of thoughtful data modeling and
+        secure handling of sensitive information.
+      </p>
+
+      <a href="index.html" class="back-link">Back to portfolio</a>
+    </div>
+
+    <!-- Side Panel -->
+    <aside class="side-panel">
+      <h3>Project Details</h3>
+      <p><strong>Role:</strong> Graduate Researcher & Developer</p>
+      <p><strong>Timeline:</strong> Semester‑long project</p>
+      <p><strong>Industry:</strong> Senior Living & Healthcare</p>
+
+      <h3>Tech Stack</h3>
+      <p>.NET</p>
+      <p>Angular</p>
+      <p>Azure SQL</p>
+      <p>REST APIs</p>
+
+      <h3>Key Themes</h3>
+      <p>HIPAA & PII compliance</p>
+      <p>Usability</p>
+      <p>Care coordination</p>
+      <p>Full‑stack development</p>
+    </aside>
+
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Case Study – Assessment & eSignature Platform</title>
+
+  <style>
+    :root {
+      --primary: #2F1645;
+      --primary-dark: #1A0D27;
+      --accent: #A678E2;
+      --text: #e7ddf7;
+      --text-muted: #b7a8d4;
+      --bg: #12071f;
+      --panel: #1b0f2b;
+      --max-width: 900px;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, sans-serif;
+      background: var(--primary-dark);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 2rem 1.5rem 4rem;
+    }
+
+    /* Hero */
+    .hero {
+      padding: 6rem 1.5rem 4rem;
+      background: radial-gradient(circle at top left, #3b215a 0, #12071f 55%, #07030d 100%);
+      text-align: center;
+    }
+
+    .hero-title {
+      font-size: 2.4rem;
+      font-weight: 700;
+      margin-bottom: 0.8rem;
+    }
+
+    .hero-subtitle {
+      max-width: 600px;
+      margin: 0.5rem auto 1.5rem;
+      color: var(--text-muted);
+      font-size: 1rem;
+    }
+
+    .hero-meta {
+      display: flex;
+      justify-content: center;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+    }
+
+    .badge {
+      padding: 0.35rem 0.9rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--text-muted);
+    }
+
+    /* Section headings */
+    h2 {
+      font-size: 1.6rem;
+      margin-top: 3rem;
+      margin-bottom: 0.6rem;
+      font-weight: 700;
+    }
+
+    p {
+      margin-bottom: 1rem;
+      color: var(--text);
+    }
+
+    ul {
+      margin: 0.5rem 0 1.5rem 1.2rem;
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: 0.6rem;
+      color: var(--text-muted);
+    }
+
+    /* Side panel */
+    .side-panel {
+      background: var(--panel);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 1.4rem 1.2rem;
+      border-radius: 16px;
+      margin-top: 2rem;
+    }
+
+    .side-panel h3 {
+      margin-top: 0;
+      margin-bottom: 0.6rem;
+      font-size: 1rem;
+      color: #fff;
+    }
+
+    .side-panel p {
+      margin-bottom: 0.6rem;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 3rem;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--accent);
+    }
+
+    .back-link::before {
+      content: "← ";
+      color: var(--accent);
+    }
+
+    @media (min-width: 900px) {
+      .case-layout {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 3rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h1 class="hero-title">Assessment & eSignature Platform</h1>
+    <p class="hero-subtitle">
+      A .NET‑based clinical assessment system supporting 230 senior living facilities, with configurable workflows,
+      automated sub‑assessments, and secure eSignatures — including offline capability for low‑connectivity environments.
+    </p>
+
+    <div class="hero-meta">
+      <span class="badge">Healthcare</span>
+      <span class="badge">.NET</span>
+      <span class="badge">SQL</span>
+      <span class="badge">eSignature</span>
+      <span class="badge">Offline Sync</span>
+    </div>
+  </section>
+
+  <!-- Content -->
+  <div class="container case-layout">
+
+    <div>
+      <h2>Overview</h2>
+      <p>
+        The Assessment & eSignature Platform was a core clinical system used across 230 senior living communities to
+        complete state‑mandated assessments, medication workflows, and compliance documentation. The platform supported
+        configurable assessment logic, automated sub‑assessments, and secure digital signatures — all built on a .NET
+        backend with SQL‑based data storage.
+      </p>
+
+      <h2>The Problem</h2>
+      <p>
+        Prior to modernization, assessments were completed using paper forms or outdated desktop tools that lacked
+        validation, consistency, and auditability. Staff frequently re‑entered data, made manual corrections, or lost
+        progress due to unreliable connectivity in certain facilities.
+      </p>
+
+      <ul>
+        <li>Paper‑based assessments caused delays and inconsistent documentation</li>
+        <li>No centralized system for tracking assessment completion or compliance</li>
+        <li>Manual entry led to high error rates and rework</li>
+        <li>Facilities with poor Wi‑Fi needed offline support</li>
+        <li>State regulations required secure signatures and audit trails</li>
+      </ul>
+
+      <h2>Your Approach</h2>
+      <p>
+        I enhanced and extended the .NET application to support configurable assessment workflows, conditional logic,
+        automated sub‑assessments, and secure eSignatures. I also contributed to offline‑capable modules that allowed staff
+        to complete assessments even in low‑connectivity environments.
+      </p>
+
+      <ul>
+        <li>Implemented dynamic assessment logic with conditional branching</li>
+        <li>Built automated sub‑assessments triggered by user responses</li>
+        <li>Added secure eSignature capture with audit‑ready metadata</li>
+        <li>Developed offline‑capable modules with background sync</li>
+        <li>Improved SQL queries and schema for performance and reliability</li>
+        <li>Created alerts and reporting tools for compliance tracking</li>
+      </ul>
+
+      <h2>The Outcome</h2>
+      <ul>
+        <li>Reduced assessment completion time to **under 5 minutes**</li>
+        <li>Cut manual entry by **90%** through automation and validation</li>
+        <li>Enabled secure, compliant digital signatures across all facilities</li>
+        <li>Supported **230 communities**, including low‑connectivity environments</li>
+        <li>Improved regulatory compliance and reduced documentation errors</li>
+      </ul>
+
+      <h2>What I Learned</h2>
+      <p>
+        This project deepened my experience building systems for regulated environments, designing offline‑capable
+        workflows, and implementing secure digital signatures. It also reinforced the importance of predictable state
+        transitions and user‑friendly clinical tools.
+      </p>
+
+      <a href="index.html" class="back-link">Back to portfolio</a>
+    </div>
+
+    <!-- Side Panel -->
+    <aside class="side-panel">
+      <h3>Project Details</h3>
+      <p><strong>Role:</strong> Developer II</p>
+      <p><strong>Timeline:</strong> Multi‑year enhancements</p>
+      <p><strong>Industry:</strong> Senior Living & Healthcare</p>
+
+      <h3>Tech Stack</h3>
+      <p>.NET Framework / .NET Core</p>
+      <p>SQL Server</p>
+      <p>REST APIs</p>
+      <p>Offline Sync</p>
+
+      <h3>Key Themes</h3>
+      <p>Clinical workflows</p>
+      <p>Compliance</p>
+      <p>eSignature</p>
+      <p>Offline capability</p>
+    </aside>
+
+  </div>
+
+</body>
+</html>
